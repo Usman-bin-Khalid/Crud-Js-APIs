@@ -3,6 +3,7 @@ const Post = require("../models/Post");
 const Comment = require("../models/Comment");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { response } = require("express");
 
 // SIGN UP
 exports.signup = async (req, res) => {
@@ -25,6 +26,8 @@ exports.signup = async (req, res) => {
     res.status(500).send("Server Error", err);
   }
 };
+
+
 
 // LOGIN
 exports.login = async (req, res) => {
@@ -51,6 +54,9 @@ exports.login = async (req, res) => {
     res.status(500).send("Server Error");
   }
 };
+
+
+
 
 // COMPLETE PROFILE
 exports.completeProfile = async (req, res) => {
